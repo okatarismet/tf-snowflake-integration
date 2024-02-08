@@ -1,22 +1,25 @@
-Terraform Module for Snowflake
+
+
+# Terraform Module for Snowflake
 This Terraform module facilitates the management of Snowflake resources, enabling you to configure and maintain your Snowflake data warehouse infrastructure as code. By leveraging this module, you can automate the provisioning of warehouses, databases, schemas, tables, and roles, ensuring a more efficient and error-free setup.
 
-Features
+## Features
 Warehouse Management: Automate the creation and configuration of Snowflake warehouses with customizable settings.
 Database and Schema Setup: Easily provision databases and schemas to organize your data logically.
 Table Creation: Define and manage tables within your schemas for structured data storage.
 Role Management: Provision roles with specific privileges for granular access control.
-Requirements
+## Requirements
 Terraform: Version 0.13 or newer.
 Snowflake Provider: Snowflake-Labs/snowflake provider version ~> 0.76.
-Usage
+## Usage
 To use this module in your Terraform configuration, follow these steps:
 
 Provider Configuration:
 Ensure the Snowflake provider is configured in your Terraform:
 
-hcl
+
 Copy code
+```hcl
 terraform {
 required_providers {
 snowflake = {
@@ -25,20 +28,23 @@ version = "~> 0.76"
 }
 }
 }
+```
 
+```hcl
 provider "snowflake" {
 account = var.account
 user = var.username
 password = var.password
 role = var.role_name
 }
+```
 Module Inclusion:
 Incorporate this module into your Terraform configuration to manage Snowflake resources:
 
-hcl
-Copy code
+```hcl
 module "snowflake_setup" {
 source = "./path/to/snowflake_module"
+```
 
 # Variables for warehouse configuration
 
@@ -75,3 +81,5 @@ Refer to the variables.tf file for detailed descriptions and default values of a
 
 Outputs
 The module provides outputs that can be used in other parts of your Terraform configuration, such as the names of the created resources. Refer to outputs.tf for details.
+
+
